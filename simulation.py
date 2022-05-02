@@ -10,8 +10,6 @@ class Trajectory():
     def __init__(self):
         self.num_obs = 3
         self.obs = []
-        # self.obs_path = []
-        # self.veh_path = []
         self.x = -4
         self.y = 5
         self.x_v = 0
@@ -25,7 +23,7 @@ class Trajectory():
         self.y = 5
         time.sleep(0.1)
 
-    def veh_path(self):
+    def path(self):
         eps = random.random()/10
         thr = 30
         if self.x_v < 120:
@@ -62,16 +60,17 @@ class Trajectory():
             x2.append(self.x_v)
             y2.append(self.y_v)
             mpc.optimization()
-            self.veh_path()
+            self.path()
             self.obj_path()
             line1.set_data(x1, y1)
             line2.set_data(x2, y2)
             plt.draw()
-            print(x1[0])
             # i += 1
             self.t+=1
             time.sleep(0.1)
             plt.pause(0.0001)
+        
+        mpc.plot()
 
 if __name__=="__main__":
     A = Trajectory()

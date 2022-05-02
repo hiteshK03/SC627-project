@@ -65,7 +65,7 @@ class VehicleModel():
 		self.theta = self.stateCopy[4]
 		self.r = self.stateCopy[5]
 		
-		print(self.stateCopy)
+		# print(self.stateCopy)
 
 def main():
 	###3 random test

@@ -17,8 +17,8 @@ class Potentials():
 		self.a_max = 9					# present done
 		self.a_q = None					# done
 		self.u = u						# present done
-		self.u_o = u_o					# from obs p_done
-		self.theta = 0.45				# not sure, maybe from vehicle
+		self.u_o = u_o					# done
+		self.theta = 0.45				# done
 		self.delta_u = 0				# done
 		self.delta_v = 0				# done
 		self.Da = 0.5					# present done

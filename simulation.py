@@ -3,6 +3,7 @@ import time
 import random
 from collections import deque
 import numpy as np
+from controller import MPCFramework
 
 class Trajectory():
 
@@ -49,11 +50,18 @@ class Trajectory():
         plt.ion()
         plt.ylim([0,8])
         plt.show()
+        state = np.array([0.,1.,0.,0.,0.,0.])
+        timestep = 0.1
+        constants = np.array([2271, 1.421, 1.434, 4600, 132000, 136000, 10400, 10800, 24800])
+
+        mpc = MPCFramework(state, timestep, constants)
+
         while self.x_v<350:
             x1.append(self.x)
             y1.append(self.y)
             x2.append(self.x_v)
             y2.append(self.y_v)
+            mpc.optimization()
             self.veh_path()
             self.obj_path()
             line1.set_data(x1, y1)

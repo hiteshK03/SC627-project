@@ -76,7 +76,6 @@ class MPCFramework():
 		self.t_list.append(self.t)
 		self.check_state()	
 		self.state_list.append(self.model.stateCopy)
-		print(self.model.stateCopy)
 
 	def check_state(self):
 		cap = [300.0, 68.750,  7, 17.000,  360.0,  37.0]
